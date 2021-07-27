@@ -1,0 +1,112 @@
+@font-face {
+    font-family: 'Lato_regular';
+    src: url('./Lato/Lato-Bold.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'input_mono_regular';
+    src: url('./input_mono_regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+* {
+  padding: 0;  
+  margin: 0;  
+  border: 0;
+  font-family: 'Lato_regular';
+}
+
+:root {
+  --weekend: #959585;
+  --weekday: #d9d9d0;
+  --today: #ffffff;
+  --bg: #181818;
+  --f_high: #fff;
+  --g_size: 90;
+  --g_pad: 5;
+  --highlight: #F9DC5C;
+  --selected: #EBC807;
+}
+
+html {
+  background-color: var(--bg);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  /* background-color: #F9DC5C; */
+  /* color: ; */
+}
+
+#app {
+}
+
+h1 {
+  color: var(--weekday);
+  font-size: 40px;
+  margin-bottom: 10px;
+  margin-top: 17px;
+}
+
+tr {
+  display: flex;
+}
+
+td {
+  width: calc(var(--g_size) * 1px);
+  height: calc(var(--g_size) * 1px);
+  color: var(--weekday);
+  padding: calc(var(--g_pad) * 1px);
+  overflow: hidden;
+}
+
+td:not(:first-child) {
+  position: relative;
+}
+
+input {
+  font-family: "input_mono_regular";
+  margin-left: calc(var(--g_size) * 1px);
+  background-color: var(--bg);
+  color: var(--f_high);
+  height: calc(var(--g_size) / 4 * 1px);
+  width: calc(var(--g_size) * 7 * 1px);
+  font-size: calc(var(--g_size) / 4 * 1px);
+  margin-top: 10px;
+  visibility: hidden;
+}
+
+input:focus {
+  outline: none;
+}
+
+.preview {
+  height: 20px;
+  background-color: var(--highlight);
+  color: var(--bg);
+  padding-left: 5px;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+.weekend {
+  color: var(--weekend);
+}
+
+.selected {
+  color: var(--selected); 
+}
+
+/* .today { */
+/*   background-color: var(--weekday); */
+/*   color: var(--bg); */
+/*   font-weight: 900; */
+/* } */
+
+.active {
+  visibility: visible;
+}
